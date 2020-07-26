@@ -5,9 +5,9 @@ const PORT = process.env.PORT || 5050;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "./public"));
+app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/workout_db", {
+mongoose.connect("mongodb://localhost/tracker_db", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: true,

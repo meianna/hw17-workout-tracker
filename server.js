@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 5050;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname + "./public"));
 
 mongoose.connect("mongodb://localhost/workout_db", {
   useNewUrlParser: true,

@@ -8,7 +8,7 @@ router.put("/api/workouts/:id", workoutController.addExercise);
 
 router.post("/api/workouts", workoutController.createWorkout);
 
-// router.get("/api/workouts/range", workoutController.getWorkoutsInRange);
+router.get("/api/workouts/range", workoutController.getWorkoutsInRange);
 
 router.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../public/index.html"));

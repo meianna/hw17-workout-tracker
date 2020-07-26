@@ -22,9 +22,19 @@ module.exports = {
 
   getLastWorkout: async (req, res) => {
     try {
-      const lastWorkout = await Workout.find({}).limit(10);
+      const lastWorkout = await Workout.find({});
       console.log(lastWorkout);
       res.json(lastWorkout);
+    } catch (err) {
+      res.json(err);
+    }
+  },
+
+  getWorkoutsInRange: async (req, res) => {
+    try {
+      const workoutsInRange = await Workout.find({}).limit(10);
+      console.log(workoutsInRange);
+      res.json(workoutsInRange);
     } catch (err) {
       res.json(err);
     }

@@ -41,19 +41,6 @@ module.exports = {
   },
 
   addExercise: async (req, res) => {
-    // try {
-    //   const addExercise = await Workout.findById(req.body.id);
-    //   addExercise.name = req.body.name;
-    //   addExercise.type = req.body.type;
-    //   addExercise.weight = req.body.weight;
-    //   addExercise.sets = req.body.sets;
-    //   addExercise.reps = req.body.reps;
-    //   addExercise.duration = req.body.duration;
-    //   addExercise.distance = req.body.distance;
-    //   await addExercise.save();
-    // } catch (err) {
-    //   res.send(err);
-    // }
     Workout.findByIdAndUpdate(
       req.params.id,
       { $push: { exercise: req.body } },
